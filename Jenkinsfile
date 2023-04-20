@@ -6,8 +6,10 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 script{
-                    git 'https://github.com/kozi2712/DevOps.git'
-			        echo 'The repository was successfully cloned.'
+                    checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/master']], 
+                    userRemoteConfigs: [[url: 'https://github.com/kozi2712/DevOps']]])
+            		}
                 }
 
             }
