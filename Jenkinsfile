@@ -9,7 +9,7 @@ pipeline {
                     checkout([$class: 'GitSCM', 
                     branches: [[name: '*/master']], 
                     userRemoteConfigs: [[url: 'https://github.com/kozi2712/DevOps']]])
-            		}
+            		
                 }
 
             }
